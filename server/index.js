@@ -12,7 +12,7 @@ let corsOptions = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  const allowedOrigins = ['https://rserv.haowee.me', 'https://www.rserv.haowee.me'];
+  const allowedOrigins = process.env.CORS_ORIGIN;
   corsOptions = {
     origin: (origin, callback) => {
       if (!origin || allowedOrigins.includes(origin)) {
